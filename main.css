@@ -1,0 +1,457 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700italic&text=%20goetda%2Cnlfc); 
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    background: #fff;
+    height: 100%;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+}
+
+::selection {
+    background: #cbaedf;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #cbaedf;
+    color: #fff;
+}
+
+.clear {
+    clear: both;
+}
+
+a {
+    color: #c7316c;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F75278;
+}
+
+.icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    fill: #9160b4;
+    cursor: default;
+    vertical-align: middle;
+    padding: 0 4px;
+}
+
+#container {
+    margin-left: 375px;
+    padding: 20px 0 40px 0;
+}
+
+#content {
+    background: #fff;
+    position: relative;
+    width: 525px;
+}
+
+#container .navigation {
+    display: block;
+    width: 525px;
+    height: 1.5em;
+    clear: both;
+}
+
+@media screen and (min-width: 1445px) {
+    #content, #container .navigation {
+        width: 1070px;
+    }
+}
+
+@media screen and (min-width: 1980px) {
+    #content, #container .navigation {
+        width: 1605px;
+    }
+}
+
+@media screen and (min-width: 2515px) {
+    #content, #container .navigation {
+        width: 2140px;
+    }
+}
+
+#container .navigation a {
+    line-height: 1.5em;
+}
+
+.nav-top {
+    padding-top: 1.5em;
+}
+
+.nav-bottom {
+    padding-bottom: 1.5em;
+}
+
+#container .navigation .newernav {
+    float: left;
+}
+
+#container .navigation .oldernav {
+    float: right;
+    margin-right: 25px;
+}
+
+#content article {
+    color: #000;
+    margin: 20px 0;
+    width: 510px;
+    background: #fff;
+}
+
+#content article .post-meta, 
+#content article .post-tags {
+    font-size: 0.7em;
+    padding: 5px 0;
+    background: #fff;
+}
+
+#content article .post-tags > span {
+    padding: 2px 4px;
+    color: #9160b4;
+}
+
+#content article .post-tags {
+    word-break: break-all;
+}
+
+#content article .post-tags {
+    line-height: 1.6em;
+    padding-bottom: 2px;
+    /*margin-top: -5px;*/
+}
+
+#content article .post-meta {
+    position: relative;
+    min-height: 12px;
+}
+
+#content article .post-meta span.reblogged {
+    position: relative;
+    z-index: 2;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 490px;
+}
+
+#content article .post-meta span.notes {
+    position: absolute;
+    z-index: 4;
+    top: 6px;
+    right: 0;
+    border-left: 5px solid #fff;
+    height: 1.25em;
+}
+
+/* Post content basics */
+.post-content {
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+.post-content > h3 {
+    padding: 5px;
+    word-break: break-word;
+}	
+
+.post-content > h3 a {
+    font-size: 1.2em;
+    color: #000;
+    text-decoration: none;
+}
+
+.post-content a:hover, #permalink-notes a:hover {
+    text-decoration: underline;
+}
+
+/* Image posts */
+.post-content .img-500 {
+    width: 500px;
+}
+
+.post-content .img-500, 
+.post-content .photoset, 
+.post-content > iframe {
+    padding: 5px;
+    border: 0;
+}
+
+.post-content .photoset_row {
+    margin-top: 5px;
+}
+
+.post-content .copy img, .tmblr-full img {
+    max-width: 100%;
+    width: auto !important;
+    height: auto !important;
+}
+
+.tmblr-full iframe {
+    max-width: 100%;
+}
+
+/* Captions + text posts */
+.post-content > .copy,
+.post-content > .caption {
+    padding: 0 6px;
+    margin: 6px 0;
+}
+
+.post-content p > a.tumblr_blog {
+    line-height: normal;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #ddd;
+    padding: 3px 0 0 12px;
+}
+
+.post-content p + blockquote {
+    padding: 6px 0 8px 12px;
+    margin-top: 4px;
+}
+
+.post-content blockquote + p,
+.post-content p + p {
+    padding-top: 8px;
+}
+
+.post-content .caption > p:first-child,
+.post-content .copy > p:first-child {
+    padding: 0;
+}
+
+.post-content .caption > p:last-child,
+.post-content .copy > p:last-child,
+.post-content blockquote + p:last-child {
+    padding-bottom: 0;
+}
+
+.post-content .copy figure {
+    margin: 8px 0;
+}
+
+.post-content figure:last-child {
+    margin-bottom: 0;
+}
+
+.post-content .copy h1,
+.post-content .copy h2,
+.post-content .copy h3 {
+    margin: 10px 0;
+}
+
+.post-content pre {
+    word-wrap: break-word;
+    font-size: .9em;
+    padding: 8px 0 4px 0;
+}
+
+.post-content .caption ul, 
+.post-content .caption ul, 
+.post-content .copy ul, 
+.post-content .copy ol {
+    margin: 8px 0 8px 20px;
+}
+
+/* Chat posts */
+.post-content ul.chat {
+    border-top: 1px solid #ccc;
+    margin-bottom: 6px;
+}
+
+.post-content ul.chat li {
+    list-style-type: none;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.8em;
+    line-height: normal;
+}
+
+.post-content ul.chat li span.label {
+    font-weight: 700;
+}
+
+/* Audio posts */
+#content article.audio .post > span:first-child {
+    display: block;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+.post-content iframe.tumblr_audio_player {
+    height: 28px;
+    width: 500px;
+    margin: 5px;
+    border: 1px solid #ccc;
+}
+
+.post-content .audio-art {
+    margin: -12px 5px 5px 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    max-width: 490px;
+    background: #fff;
+}
+
+/* Ask posts */
+.post-content blockquote.question {
+    padding: 12px 15px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.post-content blockquote.question div.source {
+    width: 100%;
+    text-align: right;
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.post-content blockquote.question div.source img {
+    vertical-align: middle;
+    padding-left: 2px;
+}
+
+/* Ask page */
+.post-content .copy iframe#ask_form {
+    width: 100% !important;
+    height: 190px !important;
+}
+
+/* Permalink notes */
+#permalink-notes {
+    margin-top: -10px;
+    background: #fff;
+    font-size: 0.8em;
+    padding: 8px 5px;
+}
+
+#permalink-notes ol li {
+    margin-bottom: 2px;
+    list-style-type: none;
+}
+
+#permalink-notes ol li a.avatar_frame {
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+#permalink-notes ol li > blockquote {
+    margin: 4px 0 4px 24px;
+}
+
+#permalink-notes ol li.more_notes_link_container a {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #5278F7;
+    display: block;
+}
+
+#permalink-notes ol li.more_notes_link_container a:hover {
+    border-color: #F75278;
+}
+
+#side {
+    background: #B32B6F url('http://static.tumblr.com/gx7dt5w/VcFn7wxtq/watercolor.jpg') center top no-repeat;
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: #fff;
+    width: 250px;
+    height: 100%;
+    padding: 70px 50px 50px 50px;
+    font-style: italic;
+}
+
+#side a, #container .navigation a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: lowercase;
+    display: block;
+}
+
+#side a:hover, #side-tags li a:hover {
+    color: #cbaedf;
+}
+
+#container .navigation a, #side-extra-links, #side-tags {
+    font-style: italic;
+    color: #000;
+    font-weight: 700;
+    line-height: 0.85em;
+}
+
+#side h1 {	
+    font-size: 3.25em;
+    letter-spacing: -1px;
+    z-index: 1;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    line-height: 0.9em;
+    padding-bottom: 12px;
+}
+
+#side-extra-links {
+    margin-top: 12px;
+}
+
+#side-extra-links li {
+    list-style-type: none;
+    display: inline;
+}
+
+#side-extra-links li:not(:last-child) {
+    padding-right: 2px;
+}
+
+#side-extra-links li a {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    display: inline-block;
+    /*background: #8F3558;*/
+    background: #942852;
+    width: 81px;
+    padding: 5px 0;
+    font-size: .8em;
+    text-align: center;
+    font-weight: normal;
+}
+
+#side p {
+    text-align: justify;
+    text-justify: newspaper;
+    font-size: 0.8em;
+    margin: 20px 7px;
+    padding: 0 7px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    word-wrap: break-word;
+}
+
+#side-tags {
+    margin-left: 7px;
+}
+
+#side-tags li {
+    list-style-type: none;
+    padding-bottom: 5px;
+}
+
+#side-tags li a {
+    font-size: 1.3em;
+    color: #ccc;
+}
