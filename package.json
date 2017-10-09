@@ -1,0 +1,22 @@
+{
+  "name": "tumblr-watercolor",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soren121/tumblr-watercolor.git"
+  },
+  "author": "Nicholas Narsing <soren121@sorenstudios.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soren121/tumblr-watercolor/issues"
+  },
+  "homepage": "https://github.com/soren121/tumblr-watercolor#readme",
+  "private": true,
+  "dependencies": {
+    "imagesloaded": "^4.1.3",
+    "masonry-layout": "^4.2.0",
+    "svg4everybody": "^2.1.9",
+    "timeago.js": "^3.0.2"
+  }
+}
