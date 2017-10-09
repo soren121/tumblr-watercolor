@@ -65,7 +65,7 @@
 		
 		<div id="content">
 			{block:Posts}
-				<article id="post_{PostID}" data-postid="{PostID}" class="masonryblock {PostType}{block:HighRes} highres{/block:HighRes}" rel="{TagsAsClasses}">
+				<article id="post_{PostID}" data-postid="{PostID}" class="{PostType}{block:HighRes} highres{/block:HighRes}" rel="{TagsAsClasses}">
 					<div class="post-meta">					
 							{block:Date}
 							<span class="reblogged">
@@ -285,16 +285,6 @@
 				});
 			});
 		{/block:IndexPage}
-		
-		function supportsInlineSvg() {
-			var div = document.createElement('div');
-			div.innerHTML = '<svg/>';
-			return (typeof SVGRect != 'undefined' && div.firstChild && div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg';
-		}
-
-		if (!supportsInlineSvg()) {
-			document.body.className += " no-inlinesvg";
-		}
 		
 		var locale = function(number, index, total_sec) {
 			return [

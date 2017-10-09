@@ -4,6 +4,8 @@ This is my personal Tumblr theme for [maxiecaulfield.tumblr.com](https://maxieca
 
 A lot of stuff is hardcoded, and there are no options.
 
+Works in IE 9+, Firefox, Chrome, Edge, Safari.
+
 ## License
 
 Licensed under the MIT License. See LICENSE for the full text.
