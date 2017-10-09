@@ -10,7 +10,7 @@
 	<meta name="msapplication-TileImage" content="{PortraitURL-128}" />
 	<meta name="msapplication-TileColor" content="#CFFFE7" />
 
-	<script type="text/javascript" src="https://static.tumblr.com/gx7dt5w/w41oxk7lz/dist.js"></script>
+	<script type="text/javascript" src="https://static.tumblr.com/gx7dt5w/TNvoxk935/dist.js"></script>
 
 	<!-- inject-css main.css -->
 </head>
@@ -286,7 +286,15 @@
 			});
 		{/block:IndexPage}
 		
-		//svg4everybody();
+		function supportsInlineSvg() {
+			var div = document.createElement('div');
+			div.innerHTML = '<svg/>';
+			return (typeof SVGRect != 'undefined' && div.firstChild && div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg';
+		}
+
+		if (!supportsInlineSvg()) {
+			document.body.className += " no-inlinesvg";
+		}
 		
 		var locale = function(number, index, total_sec) {
 			return [
