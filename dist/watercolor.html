@@ -226,7 +226,7 @@ a:hover {
     line-height: normal;
 }
 
-.post-content blockquote {
+.post-content blockquote, #permalink-notes .note blockquote {
     border-left: 4px solid #ddd;
     padding: 3px 0 0 12px;
 }
@@ -352,30 +352,31 @@ a:hover {
     background: #fff;
     font-size: 0.8em;
     padding: 8px 5px;
+    width: 510px;
 }
 
-#permalink-notes ol li {
+#permalink-notes .notes li {
     margin-bottom: 2px;
     list-style-type: none;
 }
 
-#permalink-notes ol li a.avatar_frame {
+#permalink-notes .note a.avatar_frame {
     padding-right: 5px;
     vertical-align: middle;
 }
 
-#permalink-notes ol li > blockquote {
+#permalink-notes .note > blockquote {
     margin: 4px 0 4px 24px;
 }
 
-#permalink-notes ol li.more_notes_link_container a {
+#permalink-notes .more_notes_link_container a {
     margin: 10px 0;
     padding: 5px;
     border: 1px solid #5278F7;
     display: block;
 }
 
-#permalink-notes ol li.more_notes_link_container a:hover {
+#permalink-notes .more_notes_link_container a:hover {
     border-color: #F75278;
 }
 
@@ -473,7 +474,7 @@ a:hover {
 </style>
 </head>
 	
-<body class="{block:IndexPage}index{/block:IndexPage}{block:PermalinkPage}permalink{/block:PermalinkPage} {block:SearchPage}search{/block:SearchPage}">
+<body class="{block:IndexPage}index{/block:IndexPage}{block:PermalinkPage}permalink{/block:PermalinkPage}{block:SearchPage}search{/block:SearchPage}">
 	<section id="side">
 		<h1><a href="{BlogURL}">{Title}</a></h1>
 		<ul id="side-extra-links">
@@ -758,7 +759,7 @@ a:hover {
 		{/block:IndexPage}
 		
 		function supportsInlineSvg() {
-			var div = createElement('div');
+			var div = document.createElement('div');
 			div.innerHTML = '<svg/>';
 			return (typeof SVGRect != 'undefined' && div.firstChild && div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg';
 		}
