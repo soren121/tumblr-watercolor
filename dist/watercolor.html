@@ -299,20 +299,14 @@ a:hover {
 }
 
 /* Audio posts */
-article.audio .post-content {
-    position: relative;
-}
-
 .audio-track-info {
-    padding: 3px 0;
-    font-size: 0.9em;
-    position: absolute;
-    left: 96px;
+    margin: 5px 3px -6px 5px;
+    padding: 12px;
     color: #444;
-    top: 6px;
-    width: 400px;
-    overflow: hidden;
-    white-space: nowrap;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    line-height: 1.5em;
 }
 
 .post-content iframe.tumblr_audio_player {
@@ -607,7 +601,7 @@ article.audio .post-content {
 								{block:TrackName}
 									<p class="audio-track-info">
 										<strong>{TrackName}</strong>
-										{block:Artist}- {Artist}{/block:Artist}
+										{block:Artist}<br>{Artist}{/block:Artist}
 									</p>
 								{/block:TrackName}
 							{/block:AudioPlayer}
