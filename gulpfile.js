@@ -1,12 +1,10 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat-util');
 const uglify = require('gulp-uglify');
-const injectSVG = require('gulp-inject-svg');
 const injectCSS = require('gulp-inject-css');
 
 gulp.task('html', function () {
     return gulp.src('watercolor.html')
-        .pipe(injectSVG())
         .pipe(injectCSS())
         .pipe(gulp.dest('./dist/'));
 });

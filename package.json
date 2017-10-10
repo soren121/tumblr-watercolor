@@ -22,7 +22,6 @@
     "gulp": "^3.9.1",
     "gulp-concat-util": "^0.5.5",
     "gulp-inject-css": "^0.3.7",
-    "gulp-inject-svg": "^0.1.16",
     "gulp-uglify": "^3.0.0"
   }
 }
