@@ -109,6 +109,7 @@
 						{/block:Text}
 						
 						{block:Quote}	 {/block:Quote}
+
 						{block:Chat}
 							{block:Title}
 								<h3>
@@ -119,7 +120,16 @@
 							{/block:Title}
 						{/block:Chat}  
 		
-						{block:Audio}	 {/block:Audio}
+						{block:Audio}
+							{block:AudioPlayer}
+								{block:TrackName}
+									<p class="audio-track-info">
+										<strong>{TrackName}</strong>
+										{block:Artist}- {Artist}{/block:Artist}
+									</p>
+								{/block:TrackName}
+							{/block:AudioPlayer}
+						{/block:Audio}
 						
 						{block:Video}	 {/block:Video}
 						
@@ -171,7 +181,7 @@
 						
 						{block:Audio}
 							{block:AudioPlayer}
-								{AudioPlayerWhite}
+								{AudioPlayer}
 								{block:AlbumArt}
 									<img src="{AlbumArtURL}" alt="{block:Artist}{Artist}{/block:Artist}{block:TrackName} - {TrackName}{/block:TrackName}" class="img-500 audio-art" />
 								{/block:AlbumArt}

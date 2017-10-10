@@ -284,10 +284,20 @@ a:hover {
 }
 
 /* Audio posts */
-#content article.audio .post > span:first-child {
-    display: block;
-    border: 1px solid #ccc;
-    margin: 5px;
+article.audio .post-content {
+    position: relative;
+}
+
+.audio-track-info {
+    padding: 3px 0;
+    font-size: 0.9em;
+    position: absolute;
+    left: 96px;
+    color: #444;
+    top: 6px;
+    width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .post-content iframe.tumblr_audio_player {
@@ -301,7 +311,7 @@ a:hover {
     margin: -12px 5px 5px 5px;
     border: 1px solid #ccc;
     padding: 5px;
-    max-width: 490px;
+    width: 490px;
     background: #fff;
 }
 
