@@ -1,9 +1,18 @@
+'use strict';
+
 const gulp = require('gulp');
 const concat = require('gulp-concat-util');
 const uglify = require('gulp-uglify');
+const sass = require('gulp-sass');
 const injectCSS = require('gulp-inject-css');
 
-gulp.task('html', function () {
+gulp.task('sass', function () {
+    return gulp.src(['./main.scss'])
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('html', ['sass'], function () {
     return gulp.src('watercolor.html')
         .pipe(injectCSS())
         .pipe(gulp.dest('./dist/'));
@@ -22,4 +31,4 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default', ['html', 'js']);
+gulp.task('default', ['sass', 'html', 'js']);

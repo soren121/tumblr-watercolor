@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700italic&text=%20goetda%2Cnlfc); 
+@import 'colors';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700italic&text=%20goetda%2Cnlfc');
 
 * {
     padding: 0;
@@ -6,18 +7,18 @@
 }
 
 html, body {
-    background: #fff;
+    background: $body-background-color;
     height: 100%;
     font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 }
 
 ::selection {
-    background: #cbaedf;
+    background: $selection-color;
     color: #fff;
 }
 
 ::-moz-selection {
-    background: #cbaedf;
+    background: $selection-color;
     color: #fff;
 }
 
@@ -26,19 +27,19 @@ html, body {
 }
 
 a {
-    color: #c7316c;
+    color: $link-default;
     text-decoration: none;
 }
 
 a:hover {
-    color: #F75278;
+    color: $link-hover;
 }
 
 .icon {
     display: inline-block;
     width: 16px;
     height: 16px;
-    fill: #9160b4;
+    fill: $icon-fill;
     cursor: default;
     vertical-align: middle;
     padding: 0 4px;
@@ -47,10 +48,11 @@ a:hover {
 #container {
     margin-left: 375px;
     padding: 20px 0 40px 0;
+    color: $text-color;
 }
 
 #content {
-    background: #fff;
+    background: inherit;
     position: relative;
     width: 525px;
 }
@@ -76,6 +78,7 @@ a:hover {
 
 #container .navigation a {
     line-height: 1.5em;
+    color: inherit;
 }
 
 .nav-top {
@@ -96,32 +99,27 @@ a:hover {
 }
 
 #content article {
-    color: #000;
     margin: 20px 0;
     width: 510px;
-    background: #fff;
+    background: inherit;
 }
 
 #content article .post-meta, 
 #content article .post-tags {
     font-size: 0.7em;
     padding: 5px 0;
-    background: #fff;
-}
-
-#content article .post-tags > span {
-    padding: 2px 4px;
-    color: #9160b4;
-}
-
-#content article .post-tags {
-    word-break: break-all;
+    background: inherit;
 }
 
 #content article .post-tags {
     line-height: 1.6em;
     padding-bottom: 2px;
+    word-break: break-all;
     /*margin-top: -5px;*/
+}
+
+#content article .post-tags > span {
+    padding: 2px 4px;
 }
 
 #content article .post-meta {
@@ -160,7 +158,7 @@ a:hover {
 
 .post-content > h3 a {
     font-size: 1.2em;
-    color: #000;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -364,15 +362,15 @@ a:hover {
 }
 
 #permalink-notes .more_notes_link_container a:hover {
-    border-color: #F75278;
+    border-color: $link-hover;
 }
 
 #side {
-    background: #B32B6F url('http://static.tumblr.com/gx7dt5w/VcFn7wxtq/watercolor.jpg') center top no-repeat;
+    background: $side-background-color url($side-background-image) center top no-repeat;
     position: fixed;
     left: 0;
     top: 0;
-    color: #fff;
+    color: $side-text-color;
     width: 250px;
     height: 100%;
     padding: 70px 50px 50px 50px;
@@ -380,19 +378,17 @@ a:hover {
 }
 
 #side a, #container .navigation a {
-    color: #fff;
     text-decoration: none;
     text-transform: lowercase;
     display: block;
 }
 
 #side a:hover, #side-tags li a:hover {
-    color: #cbaedf;
+    color: $page-link-hover;
 }
 
 #container .navigation a, #side-extra-links, #side-tags {
     font-style: italic;
-    color: #000;
     font-weight: 700;
     line-height: 0.85em;
 }
@@ -406,6 +402,10 @@ a:hover {
     text-align: center;
     line-height: 0.9em;
     padding-bottom: 12px;
+}
+
+#side h1 a {
+    color: inherit;
 }
 
 #side-extra-links {
@@ -425,8 +425,8 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: -1px;
     display: inline-block;
-    /*background: #8F3558;*/
-    background: #942852;
+    background: $page-link-default;
+    color: inherit;
     width: 81px;
     padding: 5px 0;
     font-size: .8em;
