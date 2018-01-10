@@ -14,14 +14,14 @@
   "homepage": "https://github.com/soren121/tumblr-watercolor#readme",
   "private": true,
   "dependencies": {
-    "imagesloaded": "^4.1.3",
-    "masonry-layout": "^4.2.0",
+    "imagesloaded": "^4.1.4",
+    "masonry-layout": "^4.2.1",
     "timeago.js": "^3.0.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat-util": "^0.5.5",
-    "gulp-inject-css": "^0.3.7",
+    "gulp-inject-css": "^0.3.8",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0"
   }
