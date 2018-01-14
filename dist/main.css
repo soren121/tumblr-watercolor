@@ -98,7 +98,7 @@ a:hover {
 
 #content article .post-meta {
   position: relative;
-  min-height: 12px; }
+  min-height: 1.5em; }
 
 #content article .post-meta span.reblogged {
   position: relative;
