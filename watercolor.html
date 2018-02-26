@@ -319,6 +319,11 @@
 				return new Promise(function (resolve, reject) {
 					var unloaded = els.length;
 
+					// If no Instagram posts are found, exit early
+					if (unloaded === 0) {
+					    resolve();
+					}
+
 					var instaObserver = new MutationObserver(function (mut) {
 						for (var m of mut) {
 							if (m.removedNodes[0].nodeName === 'BLOCKQUOTE') {
@@ -326,10 +331,9 @@
 							}
 						}
 
-						if (unloaded == 0) {
+						if (unloaded === 0) {
 							instaObserver.disconnect();
 							resolve();
-							return;
 						}
 					});
 
