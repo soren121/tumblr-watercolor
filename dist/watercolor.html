@@ -221,6 +221,10 @@ a:hover {
 .post-content .copy ol {
   margin: 8px 0 8px 20px; }
 
+.post-content hr {
+  border: 2px solid #ddd;
+  margin: 20px 0; }
+
 .post-content figure > .tmblr-attribution {
   font-size: 0.75rem;
   margin-top: 3px; }
@@ -266,6 +270,10 @@ a:hover {
   padding: 5px;
   width: 490px;
   background: #fff; }
+
+/* Video posts */
+blockquote.instagram-media {
+  min-height: 690px; }
 
 /* Ask posts */
 .post-content blockquote.question {
@@ -697,12 +705,42 @@ a:hover {
 	<script type="text/javascript">
 		{block:IndexPage}
 			var container = document.querySelector('#content');
+			var instaMedia = container.querySelectorAll('blockquote.instagram-media');
 			var msnry;
+
+			function instaPromise(els) {
+				return new Promise(function (resolve, reject) {
+					var unloaded = els.length;
+
+					var instaObserver = new MutationObserver(function (mut) {
+						for (var m of mut) {
+							if (m.removedNodes[0].nodeName === 'BLOCKQUOTE') {
+								unloaded--;
+							}
+						}
+
+						if (unloaded == 0) {
+							instaObserver.disconnect();
+							resolve();
+							return;
+						}
+					});
+
+					for (var i = 0; i < unloaded; i++) {
+						instaObserver.observe(els[i].parentNode, {
+							childList: true
+						});
+					}
+				});
+			}
+
 			// initialize Masonry after all images have loaded
-			imagesLoaded(container, function() {
-				msnry = new Masonry(container, {
-					"columnWidth": 510,
-					"gutter": 25
+			instaPromise(instaMedia).then(function () {
+				imagesLoaded(container, function () {
+					msnry = new Masonry(container, {
+						"columnWidth": 510,
+						"gutter": 25
+					});
 				});
 			});
 		{/block:IndexPage}

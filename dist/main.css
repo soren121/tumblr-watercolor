@@ -206,6 +206,10 @@ a:hover {
 .post-content .copy ol {
   margin: 8px 0 8px 20px; }
 
+.post-content hr {
+  border: 2px solid #ddd;
+  margin: 20px 0; }
+
 .post-content figure > .tmblr-attribution {
   font-size: 0.75rem;
   margin-top: 3px; }
@@ -251,6 +255,10 @@ a:hover {
   padding: 5px;
   width: 490px;
   background: #fff; }
+
+/* Video posts */
+blockquote.instagram-media {
+  min-height: 690px; }
 
 /* Ask posts */
 .post-content blockquote.question {
