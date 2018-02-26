@@ -50,6 +50,9 @@ a:hover {
   vertical-align: middle;
   padding: 0 4px; }
 
+.muted {
+  color: #999; }
+
 #container {
   margin-left: 375px;
   padding: 20px 0 40px 0;
@@ -502,6 +505,10 @@ blockquote.instagram-media {
 										<span><a href="{ReblogRootURL}">{ReblogRootName}</a></span>
 									{/block:RebloggedFromReblog}
 								{/block:Reblog}
+								{block:NotReblog}
+									<svg class="icon icon-retweet"><use xlink:href="#icon-retweet" /></svg>
+									<span class="muted">Posted by me</span>
+								{/block:NotReblog}
 							</span>
 						{/block:Date}
 						

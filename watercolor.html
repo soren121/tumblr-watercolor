@@ -103,6 +103,10 @@
 										<span><a href="{ReblogRootURL}">{ReblogRootName}</a></span>
 									{/block:RebloggedFromReblog}
 								{/block:Reblog}
+								{block:NotReblog}
+									<svg class="icon icon-retweet"><use xlink:href="#icon-retweet" /></svg>
+									<span class="muted">Posted by me</span>
+								{/block:NotReblog}
 							</span>
 						{/block:Date}
 						
