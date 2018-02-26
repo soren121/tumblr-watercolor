@@ -260,6 +260,9 @@ a:hover {
 blockquote.instagram-media {
   min-height: 690px; }
 
+.instagram-media {
+  margin-top: 5px !important; }
+
 /* Ask posts */
 .post-content blockquote.question {
   padding: 12px 15px;
