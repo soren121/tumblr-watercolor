@@ -167,6 +167,10 @@ a:hover {
 }
 
 /* Image posts */
+.post-content > a {
+    display: block;
+}
+
 .post-content .img-500 {
     width: 500px;
 }
