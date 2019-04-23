@@ -16,30 +16,42 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:700italic&text=%20goetda%2Cnlfc");
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 html, body {
   background: #fff;
   height: 100%;
-  font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif; }
-
-::selection {
-  background: #cbaedf;
-  color: #fff; }
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+}
 
 ::-moz-selection {
   background: #cbaedf;
-  color: #fff; }
+  color: #fff;
+}
+
+::selection {
+  background: #cbaedf;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #cbaedf;
+  color: #fff;
+}
 
 .clear {
-  clear: both; }
+  clear: both;
+}
 
-a {
+body a {
   color: #c7316c;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
-a:hover {
-  color: #f75278; }
+body a:hover {
+  color: #f75278;
+}
 
 .icon {
   display: inline-block;
@@ -48,75 +60,94 @@ a:hover {
   fill: #9160b4;
   cursor: default;
   vertical-align: middle;
-  padding: 0 4px; }
+  padding: 0 4px;
+}
 
 .muted {
-  color: #999; }
+  color: #999;
+}
 
 #container {
   margin-left: 375px;
   padding: 20px 0 40px 0;
-  color: #000; }
+  color: #000;
+}
 
 #content {
   background: inherit;
   position: relative;
-  width: 525px; }
+  width: 525px;
+}
 
 #container .navigation {
   display: block;
   width: 525px;
   height: 1.5em;
-  clear: both; }
+  clear: both;
+}
 
 @media screen and (min-width: 1445px) {
   #content, #container .navigation {
-    width: 1070px; } }
+    width: 1070px;
+  }
+}
 
 @media screen and (min-width: 1980px) {
   #content, #container .navigation {
-    width: 1605px; } }
+    width: 1605px;
+  }
+}
 
 #container .navigation a {
   line-height: 1.5em;
-  color: inherit; }
+  color: inherit;
+}
 
 .nav-top {
-  padding-top: 1.5em; }
+  padding-top: 1.5em;
+}
 
 .nav-bottom {
-  padding-bottom: 1.5em; }
+  padding-bottom: 1.5em;
+}
 
 #container .navigation .newernav {
-  float: left; }
+  float: left;
+}
 
 #container .navigation .oldernav {
   float: right;
-  margin-right: 25px; }
+  margin-right: 25px;
+}
 
 #content article {
   margin: 20px 0;
   width: 510px;
-  background: inherit; }
+  background: inherit;
+}
 
 #content article .post-meta,
 #content article .post-tags {
   font-size: 0.7em;
   padding: 5px 0;
-  background: inherit; }
+  background: inherit;
+}
 
 #content article .post-tags {
   line-height: 1.6em;
   padding-bottom: 2px;
   word-break: break-all;
-  /*margin-top: -5px;*/ }
+  /*margin-top: -5px;*/
+}
 
 #content article .post-tags > span {
-  padding: 2px 4px; }
+  padding: 2px 4px;
+}
 
 #content article .post-meta {
   position: relative;
-  min-height: 1.5em; }
+  min-height: 1.5em;
+}
 
 #content article .post-meta span.reblogged {
   position: relative;
@@ -124,7 +155,8 @@ a:hover {
   float: left;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 490px; }
+  max-width: 490px;
+}
 
 #content article .post-meta span.notes {
   position: absolute;
@@ -132,116 +164,149 @@ a:hover {
   top: 6px;
   right: 0;
   border-left: 5px solid #fff;
-  height: 1.25em; }
+  height: 1.25em;
+}
 
 /* Post content basics */
 .post-content {
   font-size: 0.9em;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+}
 
 .post-content > h3 {
   padding: 5px;
-  word-break: break-word; }
+  word-break: break-word;
+}
 
 .post-content > h3 a {
   font-size: 1.2em;
   color: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .post-content a:hover, #permalink-notes a:hover {
-  text-decoration: underline; }
+  text-decoration: underline;
+}
 
 /* Image posts */
 .post-content > a {
-  display: block; }
+  display: block;
+}
 
 .post-content .img-500 {
-  width: 500px; }
+  width: 500px;
+}
 
 .post-content .img-500,
 .post-content .photoset,
 .post-content > iframe {
   padding: 5px;
-  border: 0; }
+  border: 0;
+}
 
 .post-content .photoset_row {
-  margin-top: 5px; }
+  margin-top: 5px;
+}
+
+.post-content div.npf_row, .post div.npf_row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 .post-content .copy img, .tmblr-full img {
   max-width: 100%;
   width: auto !important;
-  height: auto !important; }
+  height: auto !important;
+}
 
 .tmblr-full iframe {
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 /* Captions + text posts */
 .post-content > .copy,
 .post-content > .caption {
   padding: 0 6px;
-  margin: 6px 0; }
+  margin: 6px 0;
+}
 
 .post-content p > a.tumblr_blog {
-  line-height: normal; }
+  line-height: normal;
+}
 
 .post-content blockquote, #permalink-notes .note blockquote {
   border-left: 4px solid #ddd;
-  padding: 3px 0 0 12px; }
+  padding: 3px 0 0 12px;
+}
 
 .post-content p + blockquote {
   padding: 6px 0 8px 12px;
-  margin-top: 4px; }
+  margin-top: 4px;
+}
 
 .post-content blockquote + p,
 .post-content p + p {
-  padding-top: 8px; }
+  padding-top: 8px;
+}
 
 .post-content .caption > p:first-child,
 .post-content .copy > p:first-child {
-  padding: 0; }
+  padding: 0;
+}
 
 .post-content .caption > p:last-child,
 .post-content .copy > p:last-child,
 .post-content blockquote + p:last-child {
-  padding-bottom: 0; }
+  padding-bottom: 0;
+}
 
-.post-content .copy figure {
-  margin: 8px 0; }
+.post-content .copy figure,
+.post-content .copy .npf_row {
+  margin: 8px 0;
+}
 
 .post-content figure:last-child {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .post-content .copy h1,
 .post-content .copy h2,
 .post-content .copy h3 {
-  margin: 10px 0; }
+  margin: 10px 0;
+}
 
 .post-content pre {
   word-wrap: break-word;
   font-size: .9em;
-  padding: 8px 0 4px 0; }
+  padding: 8px 0 4px 0;
+}
 
 .post-content .caption ul,
 .post-content .caption ul,
 .post-content .copy ul,
 .post-content .copy ol {
-  margin: 8px 0 8px 20px; }
+  margin: 8px 0 8px 20px;
+}
 
 .post-content hr {
   border: 2px solid #ddd;
-  margin: 20px 0; }
+  margin: 20px 0;
+}
 
 .post-content figure > .tmblr-attribution {
   font-size: 0.75rem;
-  margin-top: 3px; }
+  margin-top: 3px;
+}
 
 /* Chat posts */
 .post-content ul.chat {
   padding: 5px;
-  margin-bottom: 6px; }
+  margin-bottom: 6px;
+}
 
 .post-content ul.chat li:first-child {
-  border-top: 1px solid #ccc; }
+  border-top: 1px solid #ccc;
+}
 
 .post-content ul.chat li {
   list-style-type: none;
@@ -249,10 +314,12 @@ a:hover {
   padding: 5px 0;
   font-family: 'Consolas', 'Monaco', monospace;
   font-size: 0.8em;
-  line-height: normal; }
+  line-height: normal;
+}
 
 .post-content ul.chat li span.label {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 /* Audio posts */
 .audio-track-info {
@@ -262,49 +329,58 @@ a:hover {
   background: #f2f2f2;
   border: 1px solid #ccc;
   font-size: 0.9em;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+}
 
 .post-content iframe.tumblr_audio_player {
   height: 28px;
   width: 500px;
   margin: 5px;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+}
 
 .post-content .audio-art {
   margin: -12px 5px 5px 5px;
   border: 1px solid #ccc;
   padding: 5px;
   width: 490px;
-  background: #fff; }
+  background: #fff;
+}
 
 /* Video posts */
 blockquote.instagram-media {
-  min-height: 690px; }
+  min-height: 690px;
+}
 
 .instagram-media {
-  margin-top: 5px !important; }
+  margin-top: 5px !important;
+}
 
 /* Ask posts */
 .post-content blockquote.question {
   padding: 12px 15px;
   margin: 5px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .post-content blockquote.question div.source {
   width: 100%;
   text-align: right;
   margin-top: 10px;
   font-weight: normal;
-  font-size: 0.8em; }
+  font-size: 0.8em;
+}
 
 .post-content blockquote.question div.source img {
   vertical-align: middle;
-  padding-left: 2px; }
+  padding-left: 2px;
+}
 
 /* Ask page */
 .post-content .copy iframe#ask_form {
   width: 100% !important;
-  height: 190px !important; }
+  height: 190px !important;
+}
 
 /* Permalink notes */
 #permalink-notes {
@@ -312,30 +388,37 @@ blockquote.instagram-media {
   background: #fff;
   font-size: 0.8em;
   padding: 8px 5px;
-  width: 510px; }
+  width: 510px;
+}
 
 #permalink-notes .notes li {
   margin-bottom: 2px;
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 #permalink-notes .note a.avatar_frame {
   padding-right: 5px;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 #permalink-notes .note > blockquote {
-  margin: 4px 0 4px 24px; }
+  margin: 4px 0 4px 24px;
+}
 
 #permalink-notes .more_notes_link_container a {
   margin: 10px 0;
   padding: 5px;
   border: 1px solid #5278F7;
-  display: block; }
+  display: block;
+}
 
 #permalink-notes .more_notes_link_container a:hover {
-  border-color: #f75278; }
+  border-color: #f75278;
+}
 
 #side {
   background: #b32b6f url("https://static.tumblr.com/gx7dt5w/VcFn7wxtq/watercolor.jpg") center top no-repeat;
+  background-size: cover;
   position: fixed;
   left: 0;
   top: 0;
@@ -343,20 +426,24 @@ blockquote.instagram-media {
   width: 250px;
   height: 100%;
   padding: 70px 50px 50px 50px;
-  font-style: italic; }
+  font-style: italic;
+}
 
 #side a, #container .navigation a {
   text-decoration: none;
   text-transform: lowercase;
-  display: block; }
+  display: block;
+}
 
 #side a:hover, #side-tags li a:hover {
-  color: #cbaedf; }
+  color: #cbaedf;
+}
 
 #container .navigation a, #side-extra-links, #side-tags {
   font-style: italic;
   font-weight: 700;
-  line-height: 0.85em; }
+  line-height: 0.85em;
+}
 
 #side h1 {
   font-size: 3.25em;
@@ -366,20 +453,25 @@ blockquote.instagram-media {
   font-weight: 700;
   text-align: center;
   line-height: 0.9em;
-  padding-bottom: 12px; }
+  padding-bottom: 12px;
+}
 
 #side h1 a {
-  color: inherit; }
+  color: inherit;
+}
 
 #side-extra-links {
-  margin-top: 12px; }
+  margin-top: 12px;
+}
 
 #side-extra-links li {
   list-style-type: none;
-  display: inline; }
+  display: inline;
+}
 
 #side-extra-links li:not(:last-child) {
-  padding-right: 2px; }
+  padding-right: 2px;
+}
 
 #side-extra-links li a {
   text-transform: uppercase;
@@ -391,7 +483,8 @@ blockquote.instagram-media {
   padding: 5px 0;
   font-size: .8em;
   text-align: center;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 #side p {
   text-align: justify;
@@ -401,18 +494,22 @@ blockquote.instagram-media {
   padding: 0 7px;
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 #side-tags {
-  margin-left: 7px; }
+  margin-left: 7px;
+}
 
 #side-tags li {
   list-style-type: none;
-  padding-bottom: 5px; }
+  padding-bottom: 5px;
+}
 
 #side-tags li a {
   font-size: 1.3em;
-  color: #ccc; }
+  color: #ccc;
+}
 
 </style>
 </head>
@@ -457,18 +554,17 @@ blockquote.instagram-media {
 		</p>
 		
 		<ul id="side-tags">
-			<li><a href="/tagged/adrienette">#adrienette</a></li>
 			<li><a href="/tagged/anna kendrick">#anna kendrick</a></li>
-			<li><a href="/tagged/a:tla">#a:tla</a></li>
+			<li><a href="/tagged/a:tla" title="Avatar: The Last Airbender">#a:tla</a></li>
+			<li><a href="/tagged/hilda">#hilda</a></li>
 			<li><a href="/tagged/horizon zero dawn">#horizon zero dawn</a></li>
-			<li><a href="/tagged/ladynoir">#ladynoir</a></li>
 			<li><a href="/tagged/legend of korra">#legend of korra</a></li>
 			<li><a href="/tagged/life is strange">#life is strange</a></li>
 			<li><a href="/tagged/miraculous ladybug">#miraculous ladybug</a></li>
-			<li><a href="/tagged/overwatch">#overwatch</a></li>
 			<li><a href="/tagged/person of interest">#person of interest</a></li>
-			<li><a href="/tagged/pharmercy">#pharmercy</a></li>
 			<li><a href="/tagged/pricefield">#pricefield</a></li>
+			<li><a href="/tagged/spiderverse">#spiderverse</a></li>
+			<li><a href="/tagged/spop" title="She-Ra and the Princesses Of Power">#spop</a>
 		</ul>
 	</section>	
 	

@@ -9,7 +9,7 @@
 html, body {
     background: $body-background-color;
     height: 100%;
-    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 }
 
 ::selection {
@@ -26,12 +26,12 @@ html, body {
     clear: both;
 }
 
-a {
+body a {
     color: $link-default;
     text-decoration: none;
 }
 
-a:hover {
+body a:hover {
     color: $link-hover;
 }
 
@@ -190,6 +190,11 @@ a:hover {
     margin-top: 5px;
 }
 
+.post-content div.npf_row, .post div.npf_row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 .post-content .copy img, .tmblr-full img {
     max-width: 100%;
     width: auto !important;
@@ -237,7 +242,8 @@ a:hover {
     padding-bottom: 0;
 }
 
-.post-content .copy figure {
+.post-content .copy figure,
+.post-content .copy .npf_row {
     margin: 8px 0;
 }
 
@@ -394,6 +400,7 @@ blockquote.instagram-media {
 
 #side {
     background: $side-background-color url($side-background-image) center top no-repeat;
+    background-size: cover;
     position: fixed;
     left: 0;
     top: 0;

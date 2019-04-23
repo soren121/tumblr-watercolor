@@ -3,20 +3,33 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat-util');
 const uglify = require('gulp-uglify');
+const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const injectCSS = require('gulp-inject-css');
+const autoprefixer = require('autoprefixer');
+
+sass.compiler = require('node-sass');
+var sassOptions = {
+    errLogToConsole: true,
+    outputStyle: 'expanded'
+};
+
+var postcssOptions = [
+    autoprefixer({browsers: ['last 1 version']})
+];
 
 gulp.task('sass', function () {
     return gulp.src(['./main.scss'])
-        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(sass.sync(sassOptions).on('error', sass.logError))
+        .pipe(postcss(postcssOptions))
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('html', ['sass'], function () {
+gulp.task('html', gulp.series('sass', function () {
     return gulp.src('watercolor.html')
         .pipe(injectCSS())
         .pipe(gulp.dest('./dist/'));
-});
+}));
 
 gulp.task('js', function () {
     var libs = [
@@ -31,4 +44,4 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default', ['sass', 'html', 'js']);
+gulp.task('default', gulp.series('sass', 'html', 'js'));
