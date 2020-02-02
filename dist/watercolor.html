@@ -188,8 +188,20 @@ body a:hover {
   text-decoration: underline;
 }
 
+.reblog-list {
+  padding: 5px;
+}
+
+.reblog-list .post-reblog-trail-item {
+  margin-bottom: 10px;
+}
+
+.reblog-list .post-reblog-header {
+  margin-bottom: 5px;
+}
+
 /* Image posts */
-.post-content > a {
+.post-content-photo > a {
   display: block;
 }
 
@@ -199,7 +211,7 @@ body a:hover {
 
 .post-content .img-500,
 .post-content .photoset,
-.post-content > iframe {
+.post-content > figure iframe {
   padding: 5px;
   border: 0;
 }
@@ -225,7 +237,9 @@ body a:hover {
 
 /* Captions + text posts */
 .post-content > .copy,
-.post-content > .caption {
+.post-content > .caption,
+.post-content-text .copy,
+.post-content-text .caption {
   padding: 0 6px;
   margin: 6px 0;
 }
@@ -234,30 +248,11 @@ body a:hover {
   line-height: normal;
 }
 
-.post-content blockquote, #permalink-notes .note blockquote {
+.post-content blockquote,
+.post-content .post-reblog-content,
+#permalink-notes .note blockquote {
   border-left: 4px solid #ddd;
   padding: 3px 0 0 12px;
-}
-
-.post-content p + blockquote {
-  padding: 6px 0 8px 12px;
-  margin-top: 4px;
-}
-
-.post-content blockquote + p,
-.post-content p + p {
-  padding-top: 8px;
-}
-
-.post-content .caption > p:first-child,
-.post-content .copy > p:first-child {
-  padding: 0;
-}
-
-.post-content .caption > p:last-child,
-.post-content .copy > p:last-child,
-.post-content blockquote + p:last-child {
-  padding-bottom: 0;
 }
 
 .post-content .copy figure,
@@ -304,11 +299,13 @@ body a:hover {
   margin-bottom: 6px;
 }
 
-.post-content ul.chat li:first-child {
+.post-content ul.chat li:first-child,
+.post-content .npf_chat:first-child {
   border-top: 1px solid #ccc;
 }
 
-.post-content ul.chat li {
+.post-content ul.chat li,
+.post-content .npf_chat {
   list-style-type: none;
   border-bottom: 1px solid #ccc;
   padding: 5px 0;
@@ -354,6 +351,10 @@ blockquote.instagram-media {
 
 .instagram-media {
   margin-top: 5px !important;
+}
+
+.post-type-video .reblog-list {
+  margin-top: 5px;
 }
 
 /* Ask posts */
@@ -588,7 +589,7 @@ blockquote.instagram-media {
 		</div>
 		
 		<div id="content">
-			{block:Posts}
+			{block:Posts inlineMediaWidth="500" inlineNestedMediaWidth="500"}
 				<article id="post_{PostID}" data-postid="{PostID}" class="{PostType}{block:HighRes} highres{/block:HighRes}" rel="{TagsAsClasses}">
 					<div class="post-meta">					
 							{block:Date}
@@ -678,20 +679,45 @@ blockquote.instagram-media {
 						
 						<!-- content -->
 						{block:Text}
-							<div class="copy">
-								{Body}
+							<div class="post-type-text">
+								{block:NotReblog}
+									<div class="copy">{Body}</div>
+								{/block:NotReblog}
+								{block:RebloggedFrom}
+									<div class="reblog-list">
+										{block:Reblogs}
+											<div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+												<div class="post-reblog-header">
+													{block:IsActive}
+														<a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>:
+													{/block:IsActive}
+													{block:IsDeactivated}
+														<span class="inactive post-tumblelog-name">{Username}</span>:
+													{/block:IsDeactivated}
+												</div>
+												<div class="post-reblog-content">
+													<div class="copy">
+														{Body}
+													</div>
+												</div>
+											</div>
+										{/block:Reblogs}
+									</div>
+								{/block:RebloggedFrom}
 							</div>
 						{/block:Text}
 						
 						{block:Quote}
-							<blockquote class="{Length}">
-								{Quote}
-							</blockquote>
-							{block:Source}
-								<p class="source copy">
-									&mdash; {Source}
-								</p>
-							{/block:Source}
+							<div class="post-type-quote">
+								<blockquote class="{Length}">
+									{Quote}
+								</blockquote>
+								{block:Source}
+									<p class="source copy">
+										&mdash; {Source}
+									</p>
+								{/block:Source}
+							</div>
 						{/block:Quote}
 						
 						{block:Chat}
@@ -719,44 +745,177 @@ blockquote.instagram-media {
 								{AudioEmbed-500}
 							{/block:AudioEmbed}
 							
-							{block:Caption}
+							{block:NotReblog}
 								<div class="caption copy">{Caption}</div>
-							{/block:Caption}
+							{/block:NotReblog}
+							{block:RebloggedFrom}
+								<div class="reblog-list">
+									{block:Reblogs}
+										<div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+											<div class="post-reblog-header">
+												{block:IsActive}
+													<a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>:
+												{/block:IsActive}
+												{block:IsDeactivated}
+													<span class="inactive post-tumblelog-name">{Username}</span>:
+												{/block:IsDeactivated}
+											</div>
+											<div class="post-reblog-content">
+												<div class="caption copy">
+													{Body}
+												</div>
+											</div>
+										</div>
+									{/block:Reblogs}
+								</div>
+							{/block:RebloggedFrom}
 						{/block:Audio}
 						
 						{block:Video}
-							{VideoEmbed-500}
-							{block:Caption}
-								<div class="caption">{Caption}</div>
-							{/block:Caption}
+							<figure class="post-type-video">
+								{VideoEmbed-500}
+
+								{block:NotReblog}
+									<figcaption class="caption">{Caption}</figcaption>
+								{/block:NotReblog}
+								{block:RebloggedFrom}
+									<div class="reblog-list">
+										{block:Reblogs}
+											<div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+												<div class="post-reblog-header">
+													{block:IsActive}
+														<a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>:
+													{/block:IsActive}
+													{block:IsDeactivated}
+														<span class="inactive post-tumblelog-name">{Username}</span>:
+													{/block:IsDeactivated}
+												</div>
+												<div class="post-reblog-content">
+													<div class="copy">
+														{Body}
+													</div>
+												</div>
+											</div>
+										{/block:Reblogs}
+									</div>
+								{/block:RebloggedFrom}
+							</figure>
 						{/block:Video}
 						
 						{block:Photo}
-							{LinkOpenTag}
-								<img src="{PhotoURL-500}" alt="{PhotoAlt}" class="img-500"/>
-							{LinkCloseTag}
-							{block:Caption}
-								<div class="caption copy">
-									{Caption}
-								</div>
-							{/block:Caption}
+							<figure class="post-content-photo">
+								{LinkOpenTag}
+									<img src="{PhotoURL-500}" alt="{PhotoAlt}" class="img-500"/>
+								{LinkCloseTag}
+								
+								{block:NotReblog}
+									<figcaption class="caption copy">{Caption}</figcaption>
+								{/block:NotReblog}
+								{block:RebloggedFrom}
+									<div class="reblog-list">
+										{block:Reblogs}
+											<div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+												<div class="post-reblog-header">
+													{block:IsActive}
+														<a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>:
+													{/block:IsActive}
+													{block:IsDeactivated}
+														<span class="inactive post-tumblelog-name">{Username}</span>:
+													{/block:IsDeactivated}
+												</div>
+												<div class="post-reblog-content">
+													<div class="caption copy">
+														{Body}
+													</div>
+												</div>
+											</div>
+										{/block:Reblogs}
+									</div>
+								{/block:RebloggedFrom}
+							</figure>
 						{/block:Photo}
 						
 						{block:Photoset}
-							{Photoset-500}
-							{block:Caption}
-								<div class="caption copy">
-									{Caption}
-								</div>
-							{/block:Caption}
+							<figure class="post-content-photoset">
+								{Photoset-500}
+								
+								{block:NotReblog}
+									<figcaption class="caption copy">{Caption}</figcaption>
+								{/block:NotReblog}
+								{block:RebloggedFrom}
+									<div class="reblog-list">
+										{block:Reblogs}
+											<div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+												<div class="post-reblog-header">
+													{block:IsActive}
+														<a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>:
+													{/block:IsActive}
+													{block:IsDeactivated}
+														<span class="inactive post-tumblelog-name">{Username}</span>:
+													{/block:IsDeactivated}
+												</div>
+												<div class="post-reblog-content">
+													<div class="caption copy">
+														{Body}
+													</div>
+												</div>
+											</div>
+										{/block:Reblogs}
+									</div>
+								{/block:RebloggedFrom}
+							</figure>
 						{/block:Photoset}
 						
 						{block:Link}
-							{block:Description}
-								<div class="copy">
-									{Description}
+							<div class="post-content{block:Description} with-caption{/block:Description}{block:Thumbnail} with-thumbnail{/block:Thumbnail}">
+								<div class="link-wrapper">
+									<a {Target} href="{URL}" class="link">
+										{block:Thumbnail}
+										<div class="link-thumbnail"><img src="{Thumbnail-HighRes}" alt="" /></div>
+										{/block:Thumbnail}
+										<div class="link-text-wrapper clearfix">
+											<div class="link-text">
+												{block:Host}
+												<div class="link-host">{Host}</div>
+												{/block:Host}
+												<h2 class="link-title">{Name}</h2>
+												{block:Excerpt}
+												<div class="link-excerpt">{Excerpt}</div>
+												{/block:Excerpt}
+												{block:Author}
+												<div class="link-author">{Author}</div>
+												{/block:Author}
+											</div>
+										</div>
+									</a>
 								</div>
-							{/block:Description}
+								{block:NotReblog}
+									<div class="caption">
+										{Description}
+									</div>
+								{/block:NotReblog}
+								{block:RebloggedFrom}
+									<div class="reblog-list">
+										{block:Reblogs}
+											<div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+												<div class="post-reblog-header">
+													{block:IsActive}
+														<a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>:
+													{/block:IsActive}
+													{block:IsDeactivated}
+														<span class="inactive post-tumblelog-name">{Username}</span>:
+													{/block:IsDeactivated}
+												</div>
+												<div class="post-reblog-content">
+													<div class="post-body">
+														{Body}
+													</div>
+												</div>
+											</div>
+										{/block:Reblogs}
+									</div>
+								{/block:RebloggedFrom}
+							</div>
 						{/block:Link}
 						
 						{block:Answer}
@@ -768,9 +927,38 @@ blockquote.instagram-media {
 								
 								<div class="clear"></div>
 							</blockquote>
-							<div class="answeranswer copy">
-								{Answer}
-							</div>
+							{block:Answerer}
+								<div class="answeranswer copy">
+									{Answer}
+								</div>
+							{/block:Answerer}
+
+							{block:NotReblog}
+								<div class="replies copy">
+									{Replies}
+								</div>
+							{/block:NotReblog}
+							{block:RebloggedFrom}
+								<div class="reblog-list">
+									{block:Reblogs}
+										<div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+											<div class="post-reblog-header">
+												{block:HasPermalink}
+													<a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>:
+												{/block:HasPermalink}
+												{block:HasNoPermalink}
+													<span class="post-tumblelog-name {block:IsDeactivated} inactive{/block:IsDeactivated}">{Username}</span>:
+												{/block:HasNoPermalink}
+											</div>
+											<div class="post-reblog-content">
+												<div class="copy">
+													{Body}
+												</div>
+											</div>
+										</div>
+									{/block:Reblogs}
+								</div>
+							{/block:RebloggedFrom}
 						{/block:Answer}
 						<!-- /content -->
 					</div>

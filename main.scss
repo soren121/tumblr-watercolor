@@ -170,8 +170,19 @@ body a:hover {
     text-decoration: underline;
 }
 
+.reblog-list {
+    padding: 5px;
+
+    .post-reblog-trail-item {
+        margin-bottom: 10px;
+    }
+    .post-reblog-header {
+        margin-bottom: 5px;
+    }
+}
+
 /* Image posts */
-.post-content > a {
+.post-content-photo > a {
     display: block;
 }
 
@@ -181,7 +192,7 @@ body a:hover {
 
 .post-content .img-500, 
 .post-content .photoset, 
-.post-content > iframe {
+.post-content > figure iframe {
     padding: 5px;
     border: 0;
 }
@@ -207,7 +218,9 @@ body a:hover {
 
 /* Captions + text posts */
 .post-content > .copy,
-.post-content > .caption {
+.post-content > .caption,
+.post-content-text .copy,
+.post-content-text .caption {
     padding: 0 6px;
     margin: 6px 0;
 }
@@ -216,30 +229,11 @@ body a:hover {
     line-height: normal;
 }
 
-.post-content blockquote, #permalink-notes .note blockquote {
+.post-content blockquote, 
+.post-content .post-reblog-content,
+#permalink-notes .note blockquote {
     border-left: 4px solid #ddd;
     padding: 3px 0 0 12px;
-}
-
-.post-content p + blockquote {
-    padding: 6px 0 8px 12px;
-    margin-top: 4px;
-}
-
-.post-content blockquote + p,
-.post-content p + p {
-    padding-top: 8px;
-}
-
-.post-content .caption > p:first-child,
-.post-content .copy > p:first-child {
-    padding: 0;
-}
-
-.post-content .caption > p:last-child,
-.post-content .copy > p:last-child,
-.post-content blockquote + p:last-child {
-    padding-bottom: 0;
 }
 
 .post-content .copy figure,
@@ -286,11 +280,13 @@ body a:hover {
     margin-bottom: 6px;
 }
 
-.post-content ul.chat li:first-child {
+.post-content ul.chat li:first-child,
+.post-content .npf_chat:first-child {
     border-top: 1px solid #ccc;
 }
 
-.post-content ul.chat li {
+.post-content ul.chat li,
+.post-content .npf_chat {
     list-style-type: none;
     border-bottom: 1px solid #ccc;
     padding: 5px 0;
@@ -336,6 +332,10 @@ blockquote.instagram-media {
 
 .instagram-media {
     margin-top: 5px !important;
+}
+
+.post-type-video .reblog-list {
+    margin-top: 5px;
 }
 
 /* Ask posts */
