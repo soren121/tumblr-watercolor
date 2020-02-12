@@ -15,7 +15,7 @@ var sassOptions = {
 };
 
 var postcssOptions = [
-    autoprefixer({browsers: ['last 1 version']})
+    autoprefixer()
 ];
 
 gulp.task('sass', function () {
