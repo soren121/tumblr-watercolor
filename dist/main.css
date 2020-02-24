@@ -449,11 +449,12 @@ blockquote.instagram-media {
 
 #side-extra-links {
   margin-top: 12px;
+  display: flex;
 }
 
 #side-extra-links li {
   list-style-type: none;
-  display: inline;
+  flex-basis: 100%;
 }
 
 #side-extra-links li:not(:last-child) {
@@ -462,11 +463,10 @@ blockquote.instagram-media {
 
 #side-extra-links li a {
   text-transform: uppercase;
-  letter-spacing: -1px;
-  display: inline-block;
+  letter-spacing: -0.5px;
+  display: block;
   background: #942852;
   color: inherit;
-  width: 81px;
   padding: 5px 0;
   font-size: .8em;
   text-align: center;
