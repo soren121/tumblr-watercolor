@@ -240,6 +240,10 @@ body a:hover {
   padding: 3px 0 0 12px;
 }
 
+.post-content .copy blockquote + p {
+  margin-top: 8px;
+}
+
 .post-content .copy figure,
 .post-content .copy .npf_row {
   margin: 8px 0;
