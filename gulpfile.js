@@ -45,3 +45,4 @@ gulp.task('js', function () {
 });
 
 gulp.task('default', gulp.series('sass', 'html', 'js'));
+gulp.task('build', gulp.series('sass', 'html', 'js'));
