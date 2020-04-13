@@ -173,11 +173,16 @@ body a:hover {
 .reblog-list {
     padding: 5px;
 
-    .post-reblog-trail-item {
+    .post-reblog-trail-item:not(:last-child) {
         margin-bottom: 10px;
     }
     .post-reblog-header {
         margin-bottom: 5px;
+
+        .inactive.post-tumblelog-name {
+            color: $link-default;
+            text-decoration: line-through;
+        }
     }
 }
 
@@ -240,6 +245,10 @@ body a:hover {
     margin-top: 8px;
 }
 
+.post-content .copy p:not(:only-child):not(:last-of-type) {
+    margin-bottom: 8px;
+}
+
 .post-content .copy figure,
 .post-content .copy .npf_row {
     margin: 8px 0;
@@ -291,13 +300,14 @@ body a:hover {
 }
 
 .post-content ul.chat li,
-.post-content .npf_chat {
+.post-content p.npf_chat {
     list-style-type: none;
     border-bottom: 1px solid #ccc;
-    padding: 5px 0;
+    padding: 8px 0;
     font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 0.8em;
+    font-size: 0.85em;
     line-height: normal;
+    margin-bottom: 0 !important;
 }
 
 .post-content ul.chat li span.label {
