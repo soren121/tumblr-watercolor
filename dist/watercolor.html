@@ -188,21 +188,25 @@ body a:hover {
   text-decoration: underline;
 }
 
-.reblog-list {
+.reblog-list:not(:empty) {
   padding: 5px;
 }
 
-.reblog-list .post-reblog-trail-item:not(:last-child) {
-  margin-bottom: 10px;
+.reblog-list:not(:empty) .post-reblog-trail-item:not(:last-child) {
+  margin-bottom: 8px;
 }
 
-.reblog-list .post-reblog-header {
+.reblog-list:not(:empty) .post-reblog-header {
   margin-bottom: 5px;
 }
 
-.reblog-list .post-reblog-header .inactive.post-tumblelog-name {
+.reblog-list:not(:empty) .post-reblog-header .inactive.post-tumblelog-name {
   color: #c7316c;
   text-decoration: line-through;
+}
+
+.copy-oc {
+  padding: 5px;
 }
 
 /* Image posts */
@@ -696,7 +700,7 @@ blockquote.instagram-media {
 						{block:Text}
 							<div class="post-type-text">
 								{block:NotReblog}
-									<div class="copy">{Body}</div>
+									<div class="copy copy-oc">{Body}</div>
 								{/block:NotReblog}
 								{block:RebloggedFrom}
 									<div class="reblog-list">
@@ -761,7 +765,7 @@ blockquote.instagram-media {
 							{/block:AudioEmbed}
 							
 							{block:NotReblog}
-								<div class="caption copy">{Caption}</div>
+								<div class="caption copy copy-oc">{Caption}</div>
 							{/block:NotReblog}
 							{block:RebloggedFrom}
 								<div class="reblog-list">
@@ -791,7 +795,7 @@ blockquote.instagram-media {
 								{VideoEmbed-500}
 
 								{block:NotReblog}
-									<figcaption class="caption">{Caption}</figcaption>
+									<figcaption class="caption copy-oc">{Caption}</figcaption>
 								{/block:NotReblog}
 								{block:RebloggedFrom}
 									<div class="reblog-list">
@@ -824,7 +828,7 @@ blockquote.instagram-media {
 								{LinkCloseTag}
 								
 								{block:NotReblog}
-									<figcaption class="caption copy">{Caption}</figcaption>
+									<figcaption class="caption copy copy-oc">{Caption}</figcaption>
 								{/block:NotReblog}
 								{block:RebloggedFrom}
 									<div class="reblog-list">
@@ -855,7 +859,7 @@ blockquote.instagram-media {
 								{Photoset-500}
 								
 								{block:NotReblog}
-									<figcaption class="caption copy">{Caption}</figcaption>
+									<figcaption class="caption copy copy-oc">{Caption}</figcaption>
 								{/block:NotReblog}
 								{block:RebloggedFrom}
 									<div class="reblog-list">
@@ -905,7 +909,7 @@ blockquote.instagram-media {
 									</a>
 								</div>
 								{block:NotReblog}
-									<div class="caption">
+									<div class="caption copy-oc">
 										{Description}
 									</div>
 								{/block:NotReblog}
@@ -936,7 +940,7 @@ blockquote.instagram-media {
 						{block:Answer}
 							<blockquote class="question">
 								&ldquo;{Question}&rdquo;
-								<div class="source ">
+								<div class="source">
 									from {Asker} <img src="{AskerPortraitURL-24}" />
 								</div>
 								
@@ -949,7 +953,7 @@ blockquote.instagram-media {
 							{/block:Answerer}
 
 							{block:NotReblog}
-								<div class="replies copy">
+								<div class="replies copy copy-oc">
 									{Replies}
 								</div>
 							{/block:NotReblog}

@@ -173,21 +173,25 @@ body a:hover {
   text-decoration: underline;
 }
 
-.reblog-list {
+.reblog-list:not(:empty) {
   padding: 5px;
 }
 
-.reblog-list .post-reblog-trail-item:not(:last-child) {
-  margin-bottom: 10px;
+.reblog-list:not(:empty) .post-reblog-trail-item:not(:last-child) {
+  margin-bottom: 8px;
 }
 
-.reblog-list .post-reblog-header {
+.reblog-list:not(:empty) .post-reblog-header {
   margin-bottom: 5px;
 }
 
-.reblog-list .post-reblog-header .inactive.post-tumblelog-name {
+.reblog-list:not(:empty) .post-reblog-header .inactive.post-tumblelog-name {
   color: #c7316c;
   text-decoration: line-through;
+}
+
+.copy-oc {
+  padding: 5px;
 }
 
 /* Image posts */

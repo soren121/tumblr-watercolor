@@ -170,11 +170,11 @@ body a:hover {
     text-decoration: underline;
 }
 
-.reblog-list {
+.reblog-list:not(:empty) {
     padding: 5px;
 
     .post-reblog-trail-item:not(:last-child) {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
     .post-reblog-header {
         margin-bottom: 5px;
@@ -184,6 +184,10 @@ body a:hover {
             text-decoration: line-through;
         }
     }
+}
+
+.copy-oc {
+    padding: 5px;
 }
 
 /* Image posts */

@@ -181,7 +181,7 @@
 						{block:Text}
 							<div class="post-type-text">
 								{block:NotReblog}
-									<div class="copy">{Body}</div>
+									<div class="copy copy-oc">{Body}</div>
 								{/block:NotReblog}
 								{block:RebloggedFrom}
 									<div class="reblog-list">
@@ -246,7 +246,7 @@
 							{/block:AudioEmbed}
 							
 							{block:NotReblog}
-								<div class="caption copy">{Caption}</div>
+								<div class="caption copy copy-oc">{Caption}</div>
 							{/block:NotReblog}
 							{block:RebloggedFrom}
 								<div class="reblog-list">
@@ -276,7 +276,7 @@
 								{VideoEmbed-500}
 
 								{block:NotReblog}
-									<figcaption class="caption">{Caption}</figcaption>
+									<figcaption class="caption copy-oc">{Caption}</figcaption>
 								{/block:NotReblog}
 								{block:RebloggedFrom}
 									<div class="reblog-list">
@@ -309,7 +309,7 @@
 								{LinkCloseTag}
 								
 								{block:NotReblog}
-									<figcaption class="caption copy">{Caption}</figcaption>
+									<figcaption class="caption copy copy-oc">{Caption}</figcaption>
 								{/block:NotReblog}
 								{block:RebloggedFrom}
 									<div class="reblog-list">
@@ -340,7 +340,7 @@
 								{Photoset-500}
 								
 								{block:NotReblog}
-									<figcaption class="caption copy">{Caption}</figcaption>
+									<figcaption class="caption copy copy-oc">{Caption}</figcaption>
 								{/block:NotReblog}
 								{block:RebloggedFrom}
 									<div class="reblog-list">
@@ -390,7 +390,7 @@
 									</a>
 								</div>
 								{block:NotReblog}
-									<div class="caption">
+									<div class="caption copy-oc">
 										{Description}
 									</div>
 								{/block:NotReblog}
@@ -421,7 +421,7 @@
 						{block:Answer}
 							<blockquote class="question">
 								&ldquo;{Question}&rdquo;
-								<div class="source ">
+								<div class="source">
 									from {Asker} <img src="{AskerPortraitURL-24}" />
 								</div>
 								
@@ -434,7 +434,7 @@
 							{/block:Answerer}
 
 							{block:NotReblog}
-								<div class="replies copy">
+								<div class="replies copy copy-oc">
 									{Replies}
 								</div>
 							{/block:NotReblog}
