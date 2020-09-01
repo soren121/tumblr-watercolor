@@ -365,6 +365,9 @@ blockquote.instagram-media {
     margin: 5px;
     font-weight: bold;
 }
+.post-content blockquote.question p {
+    display: inline-block;
+}
 
 .post-content blockquote.question div.source {
     width: 100%;
