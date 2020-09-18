@@ -221,7 +221,7 @@ body a:hover {
   margin-right: 0 !important;
 }
 
-.post-content .copy img, .tmblr-full img {
+.post-content .copy img, .tmblr-full img, .link-thumbnail img {
   max-width: 100%;
   width: auto !important;
   height: auto !important;
@@ -322,6 +322,26 @@ body a:hover {
 
 .post-content ul.chat li span.label {
   font-weight: 700;
+}
+
+/* Link posts */
+.post-content .link-wrapper {
+  padding: 5px;
+}
+
+.post-content .link-text {
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.post-content .link-host {
+  color: #999;
+  font-weight: bold;
+}
+
+.post-content .link-author {
+  opacity: .7;
 }
 
 /* Audio posts */

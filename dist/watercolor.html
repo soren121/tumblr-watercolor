@@ -236,7 +236,7 @@ body a:hover {
   margin-right: 0 !important;
 }
 
-.post-content .copy img, .tmblr-full img {
+.post-content .copy img, .tmblr-full img, .link-thumbnail img {
   max-width: 100%;
   width: auto !important;
   height: auto !important;
@@ -337,6 +337,26 @@ body a:hover {
 
 .post-content ul.chat li span.label {
   font-weight: 700;
+}
+
+/* Link posts */
+.post-content .link-wrapper {
+  padding: 5px;
+}
+
+.post-content .link-text {
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.post-content .link-host {
+  color: #999;
+  font-weight: bold;
+}
+
+.post-content .link-author {
+  opacity: .7;
 }
 
 /* Audio posts */
@@ -686,19 +706,13 @@ blockquote.instagram-media {
 							{/block:AudioPlayer}
 						{/block:Audio}
 						
-						{block:Video}	 {/block:Video}
+						{block:Video}	{/block:Video}
 						
-						{block:Photo}	 {/block:Photo} 
+						{block:Photo}	{/block:Photo} 
 		
-						{block:Photoset}  {/block:Photoset}  
+						{block:Photoset}{/block:Photoset}  
 						
-						{block:Link}
-							<h3>
-								<a href="{URL}" target="{Target}">
-									{Name}<span>&nbsp;&rarr;</span>
-								</a>
-							</h3>
-						{/block:Link}
+						{block:Link}	{/block:Link}
 						
 						{block:Answer}	{/block:Answer}
 						<!-- /title -->
