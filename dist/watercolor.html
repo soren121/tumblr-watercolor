@@ -138,7 +138,7 @@ body a:hover {
 #content article .post-tags {
   line-height: 1.6em;
   padding-bottom: 2px;
-  word-break: break-all;
+  overflow-wrap: anywhere;
   /*margin-top: -5px;*/
 }
 
@@ -420,6 +420,10 @@ blockquote.instagram-media {
 .post-content blockquote.question div.source img {
   vertical-align: middle;
   padding-left: 2px;
+}
+
+.post-content blockquote.answer {
+  margin-top: 10px;
 }
 
 /* Ask page */
@@ -968,9 +972,14 @@ blockquote.instagram-media {
 								<div class="clear"></div>
 							</blockquote>
 							{block:Answerer}
-								<div class="answeranswer copy">
+								<blockquote class="question answer">
 									{Answer}
-								</div>
+									<div class="source">
+										{Answerer} <img src="{AnswererPortraitURL-24}" />
+									</div>
+									
+									<div class="clear"></div>
+								</blockquote>
 							{/block:Answerer}
 
 							{block:NotReblog}

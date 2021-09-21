@@ -423,9 +423,14 @@
 								<div class="clear"></div>
 							</blockquote>
 							{block:Answerer}
-								<div class="answeranswer copy">
+								<blockquote class="question answer">
 									{Answer}
-								</div>
+									<div class="source">
+										{Answerer} <img src="{AnswererPortraitURL-24}" />
+									</div>
+									
+									<div class="clear"></div>
+								</blockquote>
 							{/block:Answerer}
 
 							{block:NotReblog}
